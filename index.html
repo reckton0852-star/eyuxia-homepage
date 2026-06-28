@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Eyuxia | Smart Hardware Projects</title>
+  <meta name="description" content="Eyuxia 的个人智能硬件主页，记录 ESP32 小项目、产品原型与学习实验。">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="hero">
+    <nav class="topbar">
+      <div class="brand">EYUXIA</div>
+      <div class="navlinks">
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#notes">Notes</a>
+      </div>
+    </nav>
+
+    <div class="hero-media"></div>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <p class="eyebrow">Personal Hardware Lab</p>
+      <h1>Small smart hardware projects, built one careful step at a time.</h1>
+      <p class="hero-copy">
+        我把产品思维、嵌入式开发和一点点折腾精神，慢慢做成可以拿在手里的小设备。
+      </p>
+      <div class="hero-actions">
+        <a class="button primary" href="#projects">View Projects</a>
+        <a class="button secondary" href="https://github.com/reckton0852-star" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section intro-band">
+      <div class="section-inner intro-grid">
+        <div>
+          <p class="section-label">Now Building</p>
+          <h2>From ESP32 experiments to product-shaped prototypes.</h2>
+        </div>
+        <div class="intro-copy">
+          <p>
+            这里会持续整理我的智能硬件小项目，包括实际可运行的代码、项目复盘、配置流程和后续迭代方向。
+          </p>
+          <p>
+            目标不是只做出功能，而是把这些小项目逐步打磨成更像产品的东西。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div>
+            <p class="section-label">Projects</p>
+            <h2>Featured Build</h2>
+          </div>
+          <p class="section-side-note">第一批项目先从真实做完、真实踩坑、真实能复用的硬件开始。</p>
+        </div>
+
+        <article class="project-feature">
+          <div class="project-media">
+            <img src="./assets/esp32-stock-ticker-demo.jpg" alt="ESP32 stock ticker device showing stock price on a small display">
+          </div>
+          <div class="project-body">
+            <div class="project-header">
+              <div>
+                <p class="project-kicker">ESP32 / LVGL / Cloudflare</p>
+                <h3>ESP32 Stock Ticker</h3>
+              </div>
+              <span class="status-pill">v2.0.0</span>
+            </div>
+
+            <p class="project-summary">
+              一个基于 Waveshare ESP32-S3-LCD-1.47B 的美股小屏项目，支持启动页、WiFi 引导连接、网页配置 setup mode、股票轮播和稳定代理刷新。
+            </p>
+
+            <div class="project-specs">
+              <div>
+                <span class="spec-label">Display</span>
+                <span class="spec-value">1.47 inch LCD</span>
+              </div>
+              <div>
+                <span class="spec-label">Controls</span>
+                <span class="spec-value">2 buttons + RGB LED</span>
+              </div>
+              <div>
+                <span class="spec-label">Config</span>
+                <span class="spec-value">Hotspot + browser setup</span>
+              </div>
+              <div>
+                <span class="spec-label">Network</span>
+                <span class="spec-value">WiFi + proxy architecture</span>
+              </div>
+            </div>
+
+            <div class="project-links">
+              <a class="button primary" href="https://github.com/reckton0852-star/esp32-stock-ticker" target="_blank" rel="noreferrer">Open Repository</a>
+              <a class="button secondary" href="https://github.com/reckton0852-star/esp32-stock-ticker/releases/tag/v2.0.0" target="_blank" rel="noreferrer">Release v2.0.0</a>
+            </div>
+
+            <div class="project-notes">
+              <p><strong>What it solves:</strong> 把“能显示价格”的 demo，做成了“能稳定启动、能自动联网、能失败恢复”的小设备。</p>
+              <p><strong>What I learned:</strong> 真正的产品感，来自启动流程、配置流程和恢复机制，而不只是功能本身。</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section alt" id="about">
+      <div class="section-inner about-grid">
+        <div>
+          <p class="section-label">About</p>
+          <h2>Product-minded, hardware-curious.</h2>
+        </div>
+        <div class="about-copy">
+          <p>
+            我现在主要在用产品经理的视角做智能硬件小项目：先想清楚使用场景，再把硬件、界面、配置流程和稳定性一点点拼起来。
+          </p>
+          <p>
+            这不是纯代码练习，也不是纯电子实验，更像是在做一个一个能真实使用、能长期迭代的小产品原型。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="notes">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div>
+            <p class="section-label">Study Notes</p>
+            <h2>What this lab is really for</h2>
+          </div>
+        </div>
+
+        <div class="notes-grid">
+          <div class="note-panel">
+            <h3>Build</h3>
+            <p>把想法做成真实硬件，哪怕先从一个很小的屏幕开始。</p>
+          </div>
+          <div class="note-panel">
+            <h3>Learn</h3>
+            <p>把嵌入式、联网、UI、恢复机制这些知识串起来，而不是只学单点。</p>
+          </div>
+          <div class="note-panel">
+            <h3>Refine</h3>
+            <p>从 demo 走向产品感，重点优化启动、配置、稳定性和实际使用体验。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="section-inner footer-inner">
+      <div>
+        <div class="brand footer-brand">EYUXIA</div>
+        <p class="footer-copy">Personal smart hardware projects and ongoing product experiments.</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/reckton0852-star" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="https://github.com/reckton0852-star/esp32-stock-ticker" target="_blank" rel="noreferrer">ESP32 Stock Ticker</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
