@@ -62,6 +62,18 @@ img {
   line-height: 1.2;
 }
 
+.brand-lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-mark {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+}
+
 .navlinks {
   display: flex;
   gap: 20px;
@@ -426,6 +438,11 @@ img {
   margin-bottom: 8px;
 }
 
+.footer-logo {
+  width: min(420px, 100%);
+  margin-bottom: 12px;
+}
+
 .footer-links {
   display: flex;
   flex-direction: column;
@@ -468,6 +485,12 @@ img {
 
   .brand {
     font-size: 15px;
+  }
+
+  .brand-mark {
+    width: 28px;
+    height: 28px;
+    flex-basis: 28px;
   }
 
   .hero-content {
