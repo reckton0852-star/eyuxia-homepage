@@ -56,9 +56,10 @@ img {
 }
 
 .brand {
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 700;
   letter-spacing: 0;
+  line-height: 1.2;
 }
 
 .navlinks {
@@ -463,6 +464,10 @@ img {
   .navlinks {
     gap: 16px;
     flex-wrap: wrap;
+  }
+
+  .brand {
+    font-size: 15px;
   }
 
   .hero-content {
