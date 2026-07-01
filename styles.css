@@ -77,8 +77,9 @@ img {
 .hero-media {
   background:
     linear-gradient(90deg, rgba(7, 16, 24, 0.88) 0%, rgba(7, 16, 24, 0.58) 38%, rgba(7, 16, 24, 0.7) 100%),
-    url("./assets/esp32-stock-ticker-demo.jpg") center center / cover no-repeat;
+    url("./assets/site-refresh/hero-circuit-board.jpg") center center / cover no-repeat;
   transform: scale(1.04);
+  filter: saturate(0.92) contrast(1.08);
 }
 
 .hero-overlay {
@@ -330,6 +331,20 @@ img {
   border-radius: 8px;
 }
 
+.project-card-media {
+  margin: -26px -26px 22px;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(154, 171, 190, 0.14);
+  border-radius: 8px 8px 0 0;
+}
+
+.project-card-media img {
+  height: 240px;
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(0.9) contrast(1.03);
+}
+
 .project-card-top {
   display: flex;
   justify-content: space-between;
@@ -468,8 +483,17 @@ img {
   }
 
   .project-body,
-  .note-panel {
+  .note-panel,
+  .project-card {
     padding: 20px;
+  }
+
+  .project-card-media {
+    margin: -20px -20px 18px;
+  }
+
+  .project-card-media img {
+    height: 200px;
   }
 
   .project-header {
