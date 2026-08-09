@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>1.47 inch Stock Ticker | CrocHero Hardware Lab</title>
+  <meta name="description" content="A 1.47 inch ESP32-S3 smart hardware project for US stock and market data tracking.">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="detail-hero">
+    <nav class="topbar">
+      <a class="brand" href="./index.html">CrocHero Hardware Lab</a>
+      <div class="navlinks">
+        <a href="./index.html#projects">Projects</a>
+        <a href="#specs">Specs</a>
+        <a href="#architecture">Architecture</a>
+      </div>
+    </nav>
+
+    <div class="detail-hero-media"></div>
+    <div class="detail-hero-overlay"></div>
+
+    <div class="detail-hero-content">
+      <p class="eyebrow">ESP32 / LVGL / Cloudflare Worker</p>
+      <h1>1.47 inch US Stock Ticker</h1>
+      <p class="hero-copy">
+        A compact desktop market screen built on the Waveshare ESP32-S3-LCD-1.47B.
+        It tracks selected US stocks through a cloud proxy, keeps the last successful quote on screen,
+        and supports Wi-Fi setup through a local configuration portal.
+      </p>
+      <div class="hero-actions">
+        <a class="button primary" href="https://github.com/reckton0852-star/esp32-stock-ticker" target="_blank" rel="noreferrer">Firmware Repository</a>
+        <a class="button secondary" href="https://github.com/reckton0852-star/esp32-stock-ticker/releases/tag/v2.0.0" target="_blank" rel="noreferrer">Release v2.0.0</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section intro-band">
+      <div class="section-inner product-summary-grid">
+        <div>
+          <p class="section-label">Project Role</p>
+          <h2>A tiny hardware terminal for market glanceability.</h2>
+        </div>
+        <div class="intro-copy">
+          <p>
+            This project turns a small ESP32-S3 display board into a practical desk companion:
+            one screen, two buttons, RGB status feedback, and a stable cloud-backed quote pipeline.
+          </p>
+          <p>
+            The goal is not to replace a trading app. It is designed for quick awareness:
+            current price, percentage move, selected symbol, update time, and a product-like setup flow.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="specs">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div>
+            <p class="section-label">Product Specifications</p>
+            <h2>Hardware platform</h2>
+          </div>
+          <p class="section-side-note">Based on Waveshare ESP32-S3-LCD-1.47B Type B.</p>
+        </div>
+
+        <div class="spec-table">
+          <div class="spec-row">
+            <span>Board</span>
+            <strong>Waveshare ESP32-S3-LCD-1.47B</strong>
+          </div>
+          <div class="spec-row">
+            <span>Processor</span>
+            <strong>Xtensa 32-bit LX7 dual-core, up to 240 MHz</strong>
+          </div>
+          <div class="spec-row">
+            <span>Wireless</span>
+            <strong>2.4 GHz Wi-Fi 802.11 b/g/n, Bluetooth 5 LE</strong>
+          </div>
+          <div class="spec-row">
+            <span>Memory</span>
+            <strong>512 KB SRAM, 384 KB ROM, 8 MB PSRAM, 16 MB Flash</strong>
+          </div>
+          <div class="spec-row">
+            <span>Display</span>
+            <strong>1.47 inch IPS LCD, 172 x 320 pixels, 262K colors</strong>
+          </div>
+          <div class="spec-row">
+            <span>Display Driver</span>
+            <strong>ST7789, 3-wire SPI</strong>
+          </div>
+          <div class="spec-row">
+            <span>Onboard Sensors</span>
+            <strong>QMI8658 6-axis IMU: 3-axis accelerometer + 3-axis gyroscope</strong>
+          </div>
+          <div class="spec-row">
+            <span>Storage</span>
+            <strong>Micro SD / TF card slot</strong>
+          </div>
+          <div class="spec-row">
+            <span>Controls & I/O</span>
+            <strong>BOOT button, RESET button, expanded GPIO, full-speed USB serial</strong>
+          </div>
+          <div class="spec-row">
+            <span>Power & USB</span>
+            <strong>USB Type-C, battery charging management, 3.7 V lithium battery interface</strong>
+          </div>
+          <div class="spec-row">
+            <span>Status Light</span>
+            <strong>RGB LED with transparent acrylic light guide</strong>
+          </div>
+        </div>
+
+        <p class="source-note">
+          Hardware specification source:
+          <a href="https://www.waveshare.net/wiki/ESP32-S3-LCD-1.47B" target="_blank" rel="noreferrer">Waveshare Wiki</a>.
+        </p>
+      </div>
+    </section>
+
+    <section class="section alt" id="features">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div>
+            <p class="section-label">Current Feature Set</p>
+            <h2>Firmware behavior</h2>
+          </div>
+        </div>
+
+        <div class="notes-grid">
+          <div class="note-panel">
+            <h3>Market Display</h3>
+            <p>Shows selected US stock symbols, latest quote, daily change, percentage move, page index, and update time.</p>
+          </div>
+          <div class="note-panel">
+            <h3>Stable Refresh</h3>
+            <p>Refresh runs in the background. The screen keeps the last successful quote instead of clearing into a loading state.</p>
+          </div>
+          <div class="note-panel">
+            <h3>Setup Portal</h3>
+            <p>If Wi-Fi cannot connect, the device starts a local hotspot and browser setup mode for Wi-Fi and symbol configuration.</p>
+          </div>
+          <div class="note-panel">
+            <h3>Cloud Proxy</h3>
+            <p>A Cloudflare Worker hides API details, reduces ESP32 HTTPS pressure, and returns compact JSON for the device.</p>
+          </div>
+          <div class="note-panel">
+            <h3>Two Buttons</h3>
+            <p>Physical buttons are used for page switching and setup entry, matching the constraints of the tiny hardware format.</p>
+          </div>
+          <div class="note-panel">
+            <h3>RGB Feedback</h3>
+            <p>The onboard RGB LED reflects price movement direction with a color language that matches the UI.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="architecture">
+      <div class="section-inner architecture-grid">
+        <div>
+          <p class="section-label">System Architecture</p>
+          <h2>Small device, cloud-assisted data path.</h2>
+          <p class="detail-copy">
+            The ESP32 does the local display, setup flow, button handling, and timed refresh.
+            Market data is requested through a Cloudflare Worker endpoint, which keeps the firmware simpler and more stable.
+          </p>
+        </div>
+
+        <div class="architecture-panel">
+          <div class="arch-step">
+            <span>01</span>
+            <strong>ESP32-S3 device boots</strong>
+            <p>Shows startup screen, scans saved Wi-Fi, then enters stock UI or setup mode.</p>
+          </div>
+          <div class="arch-step">
+            <span>02</span>
+            <strong>Cloudflare Worker proxy</strong>
+            <p>Receives compact quote requests and returns device-friendly JSON.</p>
+          </div>
+          <div class="arch-step">
+            <span>03</span>
+            <strong>Market quote provider</strong>
+            <p>Provides stock quote data through an API, isolated from the device firmware.</p>
+          </div>
+          <div class="arch-step">
+            <span>04</span>
+            <strong>LCD + RGB output</strong>
+            <p>Displays price and movement, while RGB lighting mirrors up/down state.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="section-inner footer-inner">
+      <div>
+        <div class="brand footer-brand">CrocHero Hardware Lab</div>
+        <p class="footer-copy">Personal smart hardware projects and ongoing product experiments.</p>
+      </div>
+      <div class="footer-links">
+        <a href="./index.html">Homepage</a>
+        <a href="https://github.com/reckton0852-star/esp32-stock-ticker" target="_blank" rel="noreferrer">ESP32 Stock Ticker</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
