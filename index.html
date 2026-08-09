@@ -1,16 +1,16 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>鳄鱼侠硬件实验室 | CrocHero Hardware Lab</title>
-  <meta name="description" content="Eyuxia 的个人智能硬件主页，记录 ESP32 小项目、产品原型与学习实验。">
+  <title>CrocHero Hardware Lab | Personal Smart Hardware Projects</title>
+  <meta name="description" content="CrocHero Hardware Lab is a personal smart hardware lab documenting ESP32 devices, AI hardware prototypes, enclosure design, firmware, cloud services, and product experiments.">
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
   <header class="hero">
     <nav class="topbar">
-      <div class="brand">鳄鱼侠硬件实验室</div>
+      <div class="brand">CrocHero Hardware Lab</div>
       <div class="navlinks">
         <a href="#projects">Projects</a>
         <a href="#about">About</a>
@@ -22,10 +22,11 @@
     <div class="hero-overlay"></div>
 
     <div class="hero-content">
-      <p class="eyebrow">CrocHero Hardware Lab</p>
+      <p class="eyebrow">Personal Hardware Lab</p>
       <h1>Small smart hardware projects, built one careful step at a time.</h1>
       <p class="hero-copy">
-        我把产品思维、嵌入式开发和一点点折腾精神，慢慢做成可以拿在手里的小设备。
+        A product-minded lab for connected devices, embedded interfaces, cloud-assisted workflows,
+        and 3D-print-first hardware experiments.
       </p>
       <div class="hero-actions">
         <a class="button primary" href="#projects">View Projects</a>
@@ -43,10 +44,12 @@
         </div>
         <div class="intro-copy">
           <p>
-            这里会持续整理我的智能硬件小项目，包括实际可运行的代码、项目复盘、配置流程和后续迭代方向。
+            CrocHero Hardware Lab documents practical smart hardware projects from concept to usable prototype:
+            firmware, setup flows, cloud services, physical controls, enclosure iterations, and release notes.
           </p>
           <p>
-            目标不是只做出功能，而是把这些小项目逐步打磨成更像产品的东西。
+            The goal is not only to make things work. The goal is to make small devices feel reliable,
+            understandable, and polished enough to live on a real desk.
           </p>
         </div>
       </div>
@@ -59,7 +62,7 @@
             <p class="section-label">Projects</p>
             <h2>Featured Build</h2>
           </div>
-          <p class="section-side-note">第一批项目先从真实做完、真实踩坑、真实能复用的硬件开始。</p>
+          <p class="section-side-note">A living archive of real prototypes, field lessons, and reusable hardware patterns.</p>
         </div>
 
         <article class="project-feature">
@@ -70,13 +73,15 @@
             <div class="project-header">
               <div>
                 <p class="project-kicker">ESP32 / LVGL / Cloudflare</p>
-                <h3>ESP32 Stock Ticker</h3>
+                <h3>1.47 inch Market Ticker</h3>
               </div>
               <span class="status-pill">v2.0.0</span>
             </div>
 
             <p class="project-summary">
-              一个基于 Waveshare ESP32-S3-LCD-1.47B 的美股小屏项目，支持启动页、WiFi 引导连接、网页配置 setup mode、股票轮播和稳定代理刷新。
+              A compact market data display built on the Waveshare ESP32-S3-LCD-1.47B.
+              It shows selected US stock quotes, supports browser-based configuration,
+              uses a cloud proxy for stable data delivery, and keeps the last successful quote on screen during refresh.
             </p>
 
             <div class="project-specs">
@@ -94,7 +99,7 @@
               </div>
               <div>
                 <span class="spec-label">Network</span>
-                <span class="spec-value">WiFi + proxy architecture</span>
+                <span class="spec-value">Wi-Fi + proxy architecture</span>
               </div>
             </div>
 
@@ -105,8 +110,8 @@
             </div>
 
             <div class="project-notes">
-              <p><strong>What it solves:</strong> 把“能显示价格”的 demo，做成了“能稳定启动、能自动联网、能失败恢复”的小设备。</p>
-              <p><strong>What I learned:</strong> 真正的产品感，来自启动流程、配置流程和恢复机制，而不只是功能本身。</p>
+              <p><strong>What it solves:</strong> Turns a simple price-display demo into a stable desk device with boot states, Wi-Fi recovery, setup mode, and cloud-backed refresh behavior.</p>
+              <p><strong>What I learned:</strong> Product quality comes from startup behavior, configuration, recovery, and physical interaction, not just the core feature itself.</p>
             </div>
           </div>
         </article>
@@ -126,7 +131,9 @@
             </div>
 
             <p class="project-summary">
-              一个面向办公室与会议室使用场景的智能硬件，目标是在不依赖高额订阅费的前提下，把会议录音、转写和纪要整理串成一条自动化流程。
+              An office-focused smart hardware concept for meeting rooms. The device is designed to capture meeting audio,
+              transcribe it, upload the transcript into Feishu Docs, and use large language models to generate meeting minutes,
+              action items, and summaries.
             </p>
 
             <div class="tag-row">
@@ -139,25 +146,25 @@
             <div class="project-flow">
               <div class="flow-step">
                 <span class="flow-index">01</span>
-                <span class="flow-text">采集会议音频</span>
+                <span class="flow-text">Capture meeting audio</span>
               </div>
               <div class="flow-step">
                 <span class="flow-index">02</span>
-                <span class="flow-text">自动转写成文字</span>
+                <span class="flow-text">Transcribe speech into text</span>
               </div>
               <div class="flow-step">
                 <span class="flow-index">03</span>
-                <span class="flow-text">自动上传到飞书云文档</span>
+                <span class="flow-text">Sync output to Feishu Docs</span>
               </div>
               <div class="flow-step">
                 <span class="flow-index">04</span>
-                <span class="flow-text">结合大模型生成纪要、待办与总结</span>
+                <span class="flow-text">Generate minutes, tasks, and summaries</span>
               </div>
             </div>
 
             <div class="project-notes">
-              <p><strong>Why this project:</strong> 不想为日常办公录音与纪要长期支付订阅费用，所以想把常用流程做成自己的办公室智能硬件。</p>
-              <p><strong>Current stage:</strong> 正在梳理硬件形态、录音链路、转写方案和飞书文档自动化流程。</p>
+              <p><strong>Why this project:</strong> A personal alternative to recurring meeting-recorder subscriptions, shaped as a dedicated office-room device.</p>
+              <p><strong>Current stage:</strong> Defining the hardware form, audio chain, transcription approach, and Feishu automation workflow.</p>
             </div>
           </article>
         </div>
@@ -172,10 +179,12 @@
         </div>
         <div class="about-copy">
           <p>
-            我现在主要在用产品经理的视角做智能硬件小项目：先想清楚使用场景，再把硬件、界面、配置流程和稳定性一点点拼起来。
+            This lab approaches hardware from a product manager's point of view: start with the use case,
+            then build the firmware, screen UI, setup path, cloud integration, enclosure, and iteration loop around it.
           </p>
           <p>
-            这不是纯代码练习，也不是纯电子实验，更像是在做一个一个能真实使用、能长期迭代的小产品原型。
+            It is part learning journal, part prototype archive, and part long-term attempt to turn small experiments
+            into devices that feel considered, useful, and genuinely usable.
           </p>
         </div>
       </div>
@@ -193,15 +202,15 @@
         <div class="notes-grid">
           <div class="note-panel">
             <h3>Build</h3>
-            <p>把想法做成真实硬件，哪怕先从一个很小的屏幕开始。</p>
+            <p>Turn ideas into tangible devices, even when the first version starts with a tiny screen and a few rough edges.</p>
           </div>
           <div class="note-panel">
             <h3>Learn</h3>
-            <p>把嵌入式、联网、UI、恢复机制这些知识串起来，而不是只学单点。</p>
+            <p>Connect embedded firmware, networking, cloud APIs, UI states, and physical product thinking into one workflow.</p>
           </div>
           <div class="note-panel">
             <h3>Refine</h3>
-            <p>从 demo 走向产品感，重点优化启动、配置、稳定性和实际使用体验。</p>
+            <p>Move from demo to product feel by improving boot, setup, recovery, enclosure fit, and everyday reliability.</p>
           </div>
         </div>
       </div>
@@ -211,7 +220,7 @@
   <footer class="footer">
     <div class="section-inner footer-inner">
       <div>
-        <div class="brand footer-brand">鳄鱼侠硬件实验室</div>
+        <div class="brand footer-brand">CrocHero Hardware Lab</div>
         <p class="footer-copy">Personal smart hardware projects and ongoing product experiments.</p>
       </div>
       <div class="footer-links">

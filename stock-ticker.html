@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>1.47 inch Stock Ticker | CrocHero Hardware Lab</title>
-  <meta name="description" content="A 1.47 inch ESP32-S3 smart hardware project for US stock and market data tracking.">
+  <title>1.47 inch Market Ticker | CrocHero Hardware Lab</title>
+  <meta name="description" content="A 1.47 inch ESP32-S3 smart hardware project for US stock and market data tracking, built with LVGL, Wi-Fi setup, and a Cloudflare Worker proxy.">
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
@@ -23,11 +23,11 @@
 
     <div class="detail-hero-content">
       <p class="eyebrow">ESP32 / LVGL / Cloudflare Worker</p>
-      <h1>1.47 inch US Stock Ticker</h1>
+      <h1>1.47 inch Market Ticker</h1>
       <p class="hero-copy">
         A compact desktop market screen built on the Waveshare ESP32-S3-LCD-1.47B.
         It tracks selected US stocks through a cloud proxy, keeps the last successful quote on screen,
-        and supports Wi-Fi setup through a local configuration portal.
+        and leaves room for future exchange-rate views through the same device-ready data path.
       </p>
       <div class="hero-actions">
         <a class="button primary" href="https://github.com/reckton0852-star/esp32-stock-ticker" target="_blank" rel="noreferrer">Firmware Repository</a>
@@ -51,6 +51,7 @@
           <p>
             The goal is not to replace a trading app. It is designed for quick awareness:
             current price, percentage move, selected symbol, update time, and a product-like setup flow.
+            Future pages can extend the same pattern to exchange rates or other compact market indicators.
           </p>
         </div>
       </div>
