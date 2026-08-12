@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reckton Market Tile | CrocHero Hardware Lab</title>
+  <meta name="description" content="Reckton Market Tile is a 3.16 inch ESP32-S3 desktop market companion for glanceable US stock and ETF prices, trends, market status, and data freshness.">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="detail-hero market-tile-hero">
+    <nav class="topbar">
+      <a class="brand" href="./index.html">CrocHero Hardware Lab</a>
+      <div class="navlinks">
+        <a href="./index.html#projects">Projects</a>
+        <a href="#specs">Specs</a>
+        <a href="#experience">Experience</a>
+        <a href="#architecture">Architecture</a>
+      </div>
+    </nav>
+
+    <div class="detail-hero-media market-tile-hero-media"></div>
+    <div class="detail-hero-overlay"></div>
+
+    <div class="detail-hero-content">
+      <p class="eyebrow">ESP32-S3 / 3.16 inch RGB / Product Development</p>
+      <h1>Reckton Market Tile</h1>
+      <p class="hero-copy">
+        A color desktop market companion designed to make a small watchlist understandable in two seconds.
+        Market Tile combines price, daily movement, trend, market state, and data freshness in one wide display,
+        without asking the user to open a phone or keep a finance app in view.
+      </p>
+      <div class="hero-actions">
+        <a class="button primary" href="#experience">Explore the Product Direction</a>
+        <a class="button secondary" href="./stock-ticker.html">See the 1.47 inch Predecessor</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section intro-band">
+      <div class="section-inner product-summary-grid">
+        <div>
+          <p class="section-label">Product Role</p>
+          <h2>Market awareness that lives quietly on the desk.</h2>
+        </div>
+        <div class="intro-copy">
+          <p>
+            Market Tile is not a trading terminal and it is not a miniature finance app. It is a persistent,
+            glanceable information surface for people who follow a focused list of US stocks and ETFs while working at a desk.
+          </p>
+          <p>
+            V1 is being built as a USB-C powered prototype around the Waveshare ESP32-S3-LCD-3.16.
+            The product direction is confirmed; the display, networking, setup, cloud quote path, caching, and physical-button
+            foundations are working, while the final Market and Focus scenes remain under active development.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="specs">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div>
+            <p class="section-label">Prototype Specifications</p>
+            <h2>Confirmed hardware baseline</h2>
+          </div>
+          <p class="section-side-note">These specifications describe the current development platform, not a finalized production enclosure.</p>
+        </div>
+
+        <div class="spec-table">
+          <div class="spec-row">
+            <span>Board</span>
+            <strong>Waveshare ESP32-S3-LCD-3.16</strong>
+          </div>
+          <div class="spec-row">
+            <span>Processor</span>
+            <strong>ESP32-S3R8, Xtensa LX7 dual-core, up to 240 MHz</strong>
+          </div>
+          <div class="spec-row">
+            <span>Memory</span>
+            <strong>16 MB Flash and 8 MB OPI PSRAM</strong>
+          </div>
+          <div class="spec-row">
+            <span>Display</span>
+            <strong>3.16 inch RGB565 LCD, native 320 x 820 pixels</strong>
+          </div>
+          <div class="spec-row">
+            <span>Product Layout</span>
+            <strong>Landscape 820 x 320 interface</strong>
+          </div>
+          <div class="spec-row">
+            <span>Display Driver</span>
+            <strong>ST7701 RGB panel with LVGL 8</strong>
+          </div>
+          <div class="spec-row">
+            <span>Wireless</span>
+            <strong>2.4 GHz Wi-Fi and Bluetooth 5 LE hardware support</strong>
+          </div>
+          <div class="spec-row">
+            <span>Controls</span>
+            <strong>BOOT button for symbol, scene, and setup actions</strong>
+          </div>
+          <div class="spec-row">
+            <span>Power</span>
+            <strong>USB Type-C continuous power for the V1 prototype</strong>
+          </div>
+          <div class="spec-row">
+            <span>Local Setup</span>
+            <strong>Device hotspot and browser configuration, with no native app required</strong>
+          </div>
+        </div>
+
+        <p class="source-note">
+          Hardware baseline:
+          <a href="https://www.waveshare.net/wiki/ESP32-S3-LCD-3.16" target="_blank" rel="noreferrer">Waveshare ESP32-S3-LCD-3.16 documentation</a>.
+          Product behavior and final industrial design may change as validation continues.
+        </p>
+      </div>
+    </section>
+
+    <section class="section alt" id="experience">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div>
+            <p class="section-label">V1 Product Experience</p>
+            <h2>One display, two levels of attention.</h2>
+          </div>
+          <p class="section-side-note">V1 intentionally focuses on US stocks and ETFs before expanding into additional asset classes.</p>
+        </div>
+
+        <div class="notes-grid">
+          <div class="note-panel">
+            <h3>Market Scene</h3>
+            <p>The default glance view combines symbol, company name, current price, daily change, trend, market status, quote time, freshness state, and watchlist position.</p>
+          </div>
+          <div class="note-panel">
+            <h3>Focus Scene</h3>
+            <p>A deliberate second view expands the trend and daily range for closer inspection, without turning the display into a dense trading dashboard.</p>
+          </div>
+          <div class="note-panel">
+            <h3>Alert Scene</h3>
+            <p>A planned temporary state will surface meaningful price or movement thresholds, then return to the normal market view after acknowledgement.</p>
+          </div>
+          <div class="note-panel">
+            <h3>Freshness First</h3>
+            <p>LIVE, DELAYED, STALE, and OFFLINE states are designed to make the age and reliability of displayed data explicit.</p>
+          </div>
+          <div class="note-panel">
+            <h3>Last Good Quote</h3>
+            <p>Background refresh never clears a useful quote. If Wi-Fi or the service fails, the previous successful data remains visible with an honest status.</p>
+          </div>
+          <div class="note-panel">
+            <h3>Setup Without an App</h3>
+            <p>Saved Wi-Fi networks and the watchlist are configured through a local browser portal, preserving recovery without reflashing firmware.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-inner product-summary-grid">
+        <div>
+          <p class="section-label">Interaction Model</p>
+          <h2>Simple controls for a device meant to stay in view.</h2>
+        </div>
+        <div class="spec-table compact-spec-table">
+          <div class="spec-row">
+            <span>Single Click</span>
+            <strong>Next symbol</strong>
+          </div>
+          <div class="spec-row">
+            <span>Long Press</span>
+            <strong>Previous symbol</strong>
+          </div>
+          <div class="spec-row">
+            <span>Double Click</span>
+            <strong>Switch between Market and Focus scenes</strong>
+          </div>
+          <div class="spec-row">
+            <span>Hold for 3 Seconds</span>
+            <strong>Enter local setup mode</strong>
+          </div>
+          <div class="spec-row">
+            <span>After Manual Input</span>
+            <strong>Pause automatic watchlist rotation for 30 seconds</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="architecture">
+      <div class="section-inner architecture-grid">
+        <div>
+          <p class="section-label">System Architecture</p>
+          <h2>A proven device foundation with a wider product layer.</h2>
+          <p class="detail-copy">
+            Market Tile reuses the reliable architecture learned from the 1.47 inch Market Ticker while keeping the 3.16 inch
+            display driver independent. The device owns display, local setup, controls, caching, and recovery. A cloud proxy owns
+            API isolation, compact payloads, and service compatibility.
+          </p>
+        </div>
+
+        <div class="architecture-panel">
+          <div class="arch-step">
+            <span>01</span>
+            <strong>Boot and restore</strong>
+            <p>Initialize the ST7701 display and PSRAM, then restore saved Wi-Fi, watchlist, brightness, and rotation settings.</p>
+          </div>
+          <div class="arch-step">
+            <span>02</span>
+            <strong>Connect or recover</strong>
+            <p>Try known 2.4 GHz networks; if none can connect, expose a local setup hotspot and browser portal.</p>
+          </div>
+          <div class="arch-step">
+            <span>03</span>
+            <strong>Request device-ready quotes</strong>
+            <p>Use the existing stock.eyuxia.xyz proxy path so credentials and provider-specific parsing stay off the ESP32.</p>
+          </div>
+          <div class="arch-step">
+            <span>04</span>
+            <strong>Render an honest state</strong>
+            <p>Update the complete market model after a successful response, or preserve the last usable quote and mark its freshness.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div>
+            <p class="section-label">Development Status</p>
+            <h2>What is working, and what comes next.</h2>
+          </div>
+        </div>
+
+        <div class="development-grid">
+          <div class="development-panel">
+            <span class="development-state ready">Verified Foundation</span>
+            <h3>Hardware and service baseline</h3>
+            <ul class="feature-list">
+              <li>ST7701 RGB display running in 820 x 320 landscape mode</li>
+              <li>Required 8 MB OPI PSRAM configuration verified</li>
+              <li>Wi-Fi connection, local setup portal, and recovery flow</li>
+              <li>Working stock quotes through stock.eyuxia.xyz</li>
+              <li>Button interaction and last-successful-data retention</li>
+            </ul>
+          </div>
+          <div class="development-panel">
+            <span class="development-state building">In Development</span>
+            <h3>Market Tile V1 product layer</h3>
+            <ul class="feature-list">
+              <li>Final Market and Focus scene visual hierarchy</li>
+              <li>Real market session and data freshness semantics</li>
+              <li>Watchlist playback strategies and alert behavior</li>
+              <li>Long-duration stability and recovery validation</li>
+              <li>3D-printed enclosure, viewing angle, and cable routing</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="section-inner footer-inner">
+      <div>
+        <div class="brand footer-brand">CrocHero Hardware Lab</div>
+        <p class="footer-copy">Personal smart hardware projects and ongoing product experiments.</p>
+      </div>
+      <div class="footer-links">
+        <a href="./index.html">Homepage</a>
+        <a href="./stock-ticker.html">1.47 inch Market Ticker</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
