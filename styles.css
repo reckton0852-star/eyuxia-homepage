@@ -434,13 +434,15 @@ img {
   font-size: 14px;
 }
 
-.project-card-media-contain {
-  background: #f5f7fa;
+.market-tile-card-media {
+  background: #020811;
 }
 
-.project-card-media-contain img {
+.market-tile-card-media img {
+  height: auto;
+  aspect-ratio: 2009 / 783;
   object-fit: contain;
-  padding: 12px;
+  filter: none;
 }
 
 .detail-hero {
@@ -466,11 +468,37 @@ img {
 
 .market-tile-hero-media {
   background:
-    linear-gradient(90deg, rgba(7, 16, 24, 0.96) 0%, rgba(7, 16, 24, 0.78) 47%, rgba(7, 16, 24, 0.46) 100%),
-    url("./assets/market-tile/esp32-s3-lcd-3.16-hardware.jpg") right 10% center / min(42vw, 560px) auto no-repeat,
+    linear-gradient(90deg, rgba(7, 16, 24, 0.98) 0%, rgba(7, 16, 24, 0.91) 38%, rgba(7, 16, 24, 0.36) 72%, rgba(7, 16, 24, 0.14) 100%),
+    url("./assets/market-tile/market-tile-ui-design.png") right center / min(68vw, 1080px) auto no-repeat,
     #071018;
   transform: none;
   filter: none;
+}
+
+.market-ui-section {
+  background: #050c14;
+}
+
+.market-ui-figure {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(125, 196, 255, 0.22);
+  border-radius: 8px;
+  background: #020811;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+}
+
+.market-ui-figure img {
+  aspect-ratio: 2009 / 783;
+  object-fit: contain;
+}
+
+.market-ui-figure figcaption {
+  padding: 18px 22px;
+  border-top: 1px solid rgba(154, 171, 190, 0.16);
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.65;
 }
 
 .detail-hero-overlay {
@@ -694,6 +722,10 @@ img {
     height: 200px;
   }
 
+  .market-tile-card-media img {
+    height: auto;
+  }
+
   .project-header {
     flex-direction: column;
   }
@@ -708,9 +740,13 @@ img {
 
   .market-tile-hero-media {
     background:
-      linear-gradient(180deg, rgba(7, 16, 24, 0.45) 0%, rgba(7, 16, 24, 0.94) 70%),
-      url("./assets/market-tile/esp32-s3-lcd-3.16-hardware.jpg") center 18% / min(72vw, 430px) auto no-repeat,
+      linear-gradient(180deg, rgba(7, 16, 24, 0.28) 0%, rgba(7, 16, 24, 0.96) 57%),
+      url("./assets/market-tile/market-tile-ui-design.png") center 16% / 118% auto no-repeat,
       #071018;
+  }
+
+  .market-ui-figure figcaption {
+    padding: 16px;
   }
 
   .spec-row {
