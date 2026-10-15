@@ -1,0 +1,15 @@
+/family/campus/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: no-referrer
+  X-Frame-Options: DENY
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'
+/family/campus/sw.js
+  Cache-Control: no-cache
+/family/campus/index.html
+  Cache-Control: no-cache
+/family/campus/manifest.webmanifest
+  Cache-Control: no-cache
+
+/family/campus/*
+  X-Robots-Tag: noindex, nofollow

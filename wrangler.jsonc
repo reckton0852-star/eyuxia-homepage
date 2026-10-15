@@ -1,0 +1,10 @@
+{
+  "name": "eyuxia-homepage",
+  "compatibility_date": "2026-08-13",
+  "workers_dev": true,
+  "preview_urls": false,
+  "assets": {
+    "directory": ".",
+    "not_found_handling": "none"
+  }
+}
